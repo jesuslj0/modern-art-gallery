@@ -1,0 +1,53 @@
+@use './variables' as *;
+@use './fonts';
+@use './typography' as t;
+@use 'sass:map';
+@use './buttons';
+
+body {
+    background-color: $white;
+    width: 100%;
+    height: auto;
+    padding: 0px auto;
+    margin: 0px;
+}
+
+h1 {
+    font-family: 'Big Shoulders';
+    font-size: map.get(t.$heading-font-sizes, xl);
+    line-height: map.get(t.$heading-line-heights, xl);
+    padding: 8px 12px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-family: 'Big Shoulders';
+    font-size: map.get(t.$heading-font-sizes, l);
+    line-height: map.get(t.$heading-line-heights, l);
+}
+
+h3 {
+    font-family: 'Big Shoulders';
+    font-size: map.get(t.$heading-font-sizes, m);
+    line-height: map.get(t.$heading-line-heights, m);
+}
+.home-page {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+p.body-s {
+    font-family: 'Outfit Light';
+    font-size: map.get(t.$body-font-sizes, s);
+    line-height: map.get(t.$body-line-heights, s);
+    color: $grey;
+    padding: 16px 8px;
+}
+
+.hero-img-container {
+    width: 100vw;
+    height: 30vh;
+    background-image: url('../assets/img/gallery-hero.png');
+    background-position: 50% 50%;
+    background-size: 90%;
+}
