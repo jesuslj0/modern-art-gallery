@@ -72,8 +72,13 @@ p.body-s {
 .hero-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+
+    h1 {
+        font-size: map.get(t.$heading-font-sizes, m);
+        line-height: map.get(t.$heading-line-heights, m);
+    }
 }
 
 .gallery-1, .gallery-2 {
@@ -152,5 +157,148 @@ footer.home {
         flex-direction: row;
         gap: 20px;
         margin: 12px;
+    }
+
+    .social-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+// Media Querys for Tablet 
+@media (min-width: 600px) and (max-width: 1024px) {
+    .hero {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0px 0px 160px;
+        padding: 0px;
+        position: relative;
+
+        h1 {
+            font-size: map.get(t.$heading-font-sizes, l);
+            line-height: 65px;
+        }
+        
+        .hero-img-container {
+            width: 430px;
+            height: 700px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            width: 355px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            position: relative;
+            right: 50px;
+        }
+    }
+
+    .gallery-1 {
+        display: flex;
+        flex-direction: row;
+        flex-flow: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+
+        .img-container1 {
+            width: 400px;
+            height: 400px;
+            margin-bottom: 10px;
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            width: 250px;
+            
+            h3 {
+                font-size: 50px;
+                line-height: 45px;
+            }
+
+            p {
+                padding: 0px 12px;
+            }
+        }
+    }
+
+    .gallery-2 {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 10px;
+        margin: 0px 50px;
+        padding: 0px;
+        margin-bottom: 130px;
+
+        .img-container2 {
+            width: 400px;
+            height: 720px;
+            grid-row: 2 span;
+            margin: 0px;
+        }
+
+        .img-container3 {
+            width: 300px;
+            height: 313px;
+            margin: 0px;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            margin: 0px;
+            height: 328px;
+            padding: 36px 16px;
+
+            h3 {
+                font-size: 50px;
+                line-height: 45px;
+            }
+
+            p {
+                padding-right: 36px;
+                margin-top: 0px;
+            }
+        }
+    }
+
+    footer.home {
+        height: 216px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        padding: 36px 30px 0px 30px;
+
+        .icons-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin: 12px;
+        }
+
+        h4 {
+            line-height: map.get(t.$body-line-heights, s);
+        }
+
+        p {
+            width: 280px;
+            margin: 0px;
+            position: relative;
+            right: 30px;
+        }
+
     }
 }
