@@ -39,7 +39,7 @@ h3 {
 h4 {
     font-family: 'Big Shoulders';
     font-size: map.get(t.$heading-font-sizes, s);
-    line-height: map.get(t.$heading-line-heights, s);
+    line-height: 25px;
 }
 
 .home-page {
@@ -162,6 +162,77 @@ footer.home {
     .social-icon {
         width: 20px;
         height: 20px;
+    }
+}
+
+// Styles for Location Page
+section.map {
+    background-image: url('../assets/img/map-with-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 550px;
+}
+
+section.location-info {
+    .title > h3 {
+        padding: 0px;
+        color: $white;
+    }
+    background-color: $black;
+    padding: 36px 18px;
+
+    .content {
+        .subtitle {
+            color: $orange;
+        }
+        .address {
+            font-family: 'Outfit Light';
+            font-size: map.get(t.$body-font-sizes, s);
+            line-height: map.get(t.$body-line-heights, m);
+            color: $white;
+        }
+        .text {
+            font-family: 'Outfit Light';
+            font-size: map.get(t.$body-font-sizes, s);
+            line-height: map.get(t.$body-line-heights, s);
+            color: $white;
+        }
+    }
+
+}
+
+
+footer.location {
+    background-color: $orange;
+    padding: 36px 18px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px;
+
+    h4 {
+        color: $black;
+        margin: 0px;
+        padding: 12px;
+        font-size: 25px;
+    }
+
+    p {
+        color: $black;
+    }
+
+    .icons-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        margin: 12px;
+    }
+
+    .social-icon {
+        width: 20px;
+        height: 20px;
+        filter: invert(0.9)
     }
 }
 
@@ -301,4 +372,231 @@ footer.home {
         }
 
     }
+}
+
+// Media Querys for Desktop
+@media (min-width: 1024px) {
+
+    .hero {
+        width: 100vw;
+        position: relative;
+        height: 800px;
+
+        .hero-img-container {
+            z-index: -10;
+            width: 980px;
+            height: 800px;
+            position: absolute;
+            left: 0%;
+            background-color: $black;
+            background-position-x: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            display: flex;
+            flex-direction: row;
+            gap: 150px;
+
+            h1 {
+                font-size: map.get(t.$heading-font-sizes, xl);
+                line-height: map.get(t.$heading-line-heights, xl);
+                font-weight: 900;
+                color: $white;
+                width: 600px;
+            }
+
+            div:nth-of-type(1) {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 350px;
+
+                p {
+                    font-family: 'Outfit Light';
+                    font-size: map.get(t.$body-font-sizes, m);
+                    line-height: map.get(t.$body-line-heights, m);
+                    color: $grey;
+                    padding: 16px 8px;
+                }
+            }
+        }
+    }
+
+    .gallery-1 {
+        display: flex;
+        flex-direction: row;
+        flex-flow: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 160px;
+
+        .img-container1 {
+            width: 635px;
+            height: 400px;
+            margin-bottom: 36px;
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            width: 350px;
+            
+            h3 {
+                font-size: map.get(t.$heading-font-sizes, m);
+                line-height: map.get(t.$heading-line-heights, m);
+            }
+
+            p {
+                font-family: 'Outfit Light';
+                font-size: map.get(t.$body-font-sizes, m);;
+                line-height: map.get(t.$body-line-heights, m);
+                padding: 0px 12px;
+            }
+    }
+    }
+
+    .gallery-2 {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 32px;
+        margin: 0px 50px;
+        padding: 0px;
+        margin-bottom: 130px;
+
+        .img-container2 {
+            width: 635px;
+            height: 745px;
+            grid-row: 2 span;
+            margin: 0px;
+        }
+
+        .img-container3 {
+            width: 480px;
+            height: 313px;
+            margin: 0px;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            margin: 0px;
+            width: 445px;
+            height: 328px;
+            padding: 36px 18px;
+
+            h3 {
+                font-size: map.get(t.$heading-font-sizes, m);
+                line-height: map.get(t.$heading-line-heights, m);
+                margin-left: 20px;
+            }
+
+            p {
+                font-size: map.get(t.$body-font-sizes, m);;
+                line-height: map.get(t.$body-line-heights, m);
+                padding-right: 36px;
+                margin-top: 0px;
+                margin-left: 20px;
+            }
+        }
+    }
+
+    footer.home {
+        height: 244px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 130px 0px 130px;
+
+        .icons-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin: 12px;
+            position: relative;
+            top: -22px;
+        }
+
+        h4 {
+            font-size: map.get(t.$heading-font-sizes, s);
+            line-height: map.get(t.$heading-line-heights, s);
+        }
+
+        p {
+            width: 430px;
+            margin: 0px;
+            position: relative;
+            right: 60px;
+        }
+    }
+}
+
+//Media Querys for Desktop Large
+@media (min-width: 1440px) and (max-width: 2100px) {
+        .hero {
+        width: 100vw;
+        position: relative;
+        height: 800px;
+
+        .hero-img-container {
+            z-index: -10;
+            width: 70vw;
+            height: 800px;
+            position: absolute;
+            left: 0%;
+            background-color: $black;
+            background-position-x: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            position: absolute;
+            left: 20%;
+            top: 20%;
+            display: flex;
+            flex-direction: row;
+            gap: 200px;
+            margin-left: 0px;
+
+            h1 {
+                font-size: map.get(t.$heading-font-sizes, xl);
+                line-height: map.get(t.$heading-line-heights, xl);
+                font-weight: 900;
+                color: $white;
+                width: 600px;
+            }
+
+            div:nth-of-type(1) {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 350px;
+
+                p {
+                    font-family: 'Outfit Light';
+                    font-size: map.get(t.$body-font-sizes, m);
+                    line-height: map.get(t.$body-line-heights, m);
+                    color: $grey;
+                    padding: 16px 8px;
+                }
+            }
+        }
+    }
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
 }

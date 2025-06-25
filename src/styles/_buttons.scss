@@ -62,3 +62,63 @@
     }
 }
  
+
+.location-button {
+    width: 260px;
+    height: 72px;
+    background-color: $black;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+
+    .button-text {
+        background-color: $black;
+        width: 204px;
+        height: 72px;
+        display: flex;
+        flex-direction: colum;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease-in;
+        
+        a {
+            text-decoration: none;
+        }
+        
+        span {
+            font-family: 'Big Shoulders';
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 4px; 
+            color: $white;
+        }
+    }
+
+
+    .button-icon {
+        width: 56px;
+        height: 72px;
+        background-color: $orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease-in;
+
+        img.arrow-icon {
+            width: 8px;
+            height: 24px;
+            transform: rotate(180deg);
+        }
+    }
+
+    &:hover {
+        .button-text {
+            background-color: $orange;
+        }
+        .button-icon {
+            background-color: $black;
+        }
+    }
+}
